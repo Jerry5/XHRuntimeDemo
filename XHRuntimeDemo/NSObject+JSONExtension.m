@@ -56,10 +56,13 @@
                         
                         NSString *classStr = [self arrayObjectClass];
                         class = NSClassFromString(classStr);
-                    }
-                    // 将数组中的所有模型进行字典转模型
-                    for (int i = 0; i < array.count; i++) {
-                        [mArray addObject:[class objectWithDict:value[i]]];
+                        
+                        // 将数组中的所有模型进行字典转模型
+                        for (int i = 0; i < array.count; i++) {
+                            [mArray addObject:[class objectWithDict:value[i]]];
+                        }
+                    } else {
+                        mArray = value;
                     }
                     
                     value = mArray;
